@@ -4,7 +4,8 @@ h1 {
   font-family: "Pattaya", sans-serif;
   font-weight: 100;
   line-height: 28px;
-  margin-bottom: 5px;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 body {
@@ -27,12 +28,33 @@ a {
   color: #6e92ee;
 }
 
+small {
+  margin: 0 auto;
+  display: block;
+  max-width: 500px;
+}
+
 .weather-wrapper {
-  max-width: 600px;
+  max-width: 500px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #6e92ee;
   border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #6e92ee;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ffe168;
+  transition: 200ms;
+  border: none;
+}
+
+#search-form {
+  margin-bottom: 20px;
 }
 
 #description {
