@@ -43,6 +43,12 @@ small {
   border-radius: 8px;
 }
 
+.weather-details {
+  font-size: 12px;
+  position: relative;
+  bottom: -10px;
+}
+
 .btn-primary {
   background-color: #6e92ee;
   border: none;
@@ -54,23 +60,28 @@ small {
   border: none;
 }
 
+.weather-icon img {
+  margin-right: 10px;
+  float: left;
+  height: 64px;
+  width: 64px;
+}
+
 #search-form {
   margin-bottom: 20px;
 }
 
 #description {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   padding-bottom: 0;
 }
 
 #temperature {
   font-family: "Pattaya", sans-serif;
   font-size: 50px;
-  position: relative;
-  bottom: -14px;
 }
 
 #units {
   position: relative;
-  top: -12px;
+  top: -26px;
 }
