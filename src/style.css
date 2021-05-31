@@ -1,3 +1,53 @@
 h1 {
-  color: blueviolet;
+  color: #6e92ee;
+  font-size: 40px;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #6e92ee;
+}
+
+.weather-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #6e92ee;
+  border-radius: 8px;
+}
+
+#description {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#temperature {
+  font-family: "Pattaya", sans-serif;
+  font-size: 50px;
+  position: relative;
+  bottom: -14px;
+}
+
+#units {
+  position: relative;
+  top: -12px;
 }
