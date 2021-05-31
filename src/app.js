@@ -28,7 +28,6 @@ function displayWeather(response) {
         let dateElement = document.querySelector("#date");
         let iconElement = document.querySelector("#icon");
         let icon = response.data.weather[0].icon;
-        let altElement = document.querySelector("#icon");
         
         temperatureElement.innerHTML = Math.round(response.data.main.temp);
         cityElement.innerHTML = response.data.name;
@@ -41,7 +40,7 @@ function displayWeather(response) {
       }
 
 let apiKey = "dff2474c7e34531595f0b5e8d1de3e52";
-let city = "Los Angeles";
+let city = "Chicago";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 axios.get(apiUrl).then(displayWeather);
