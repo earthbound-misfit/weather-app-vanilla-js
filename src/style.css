@@ -74,6 +74,7 @@ small {
 #description {
   margin-bottom: 10px;
   padding-bottom: 0;
+  text-transform: capitalize;
 }
 
 #temperature {
