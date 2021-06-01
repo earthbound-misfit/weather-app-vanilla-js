@@ -19,7 +19,6 @@ function formatDate(timestamp) {
 }
 
 function displayWeather(response) {
-    console.log(response.data);
         let temperatureElement = document.querySelector("#temperature");
         let cityElement = document.querySelector("#city");
         let descriptionElement = document.querySelector("#description");
@@ -39,9 +38,19 @@ function displayWeather(response) {
         iconElement.setAttribute("alt", response.data.weather[0].description);
       }
 
-let apiKey = "dff2474c7e34531595f0b5e8d1de3e52";
-let city = "Chicago";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+function search(city) {
+    let apiKey = "dff2474c7e34531595f0b5e8d1de3e52";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayWeather);
+}
 
-axios.get(apiUrl).then(displayWeather);
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Chicago");
