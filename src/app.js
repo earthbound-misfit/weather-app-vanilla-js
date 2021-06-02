@@ -58,12 +58,16 @@ function convertToCelsius(event) {
     let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8; 
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
 }
 
 function convertToFahrenheit(event) {
     event.preventDefault();
     temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
 }
 
 let fahrenheitTemperature = null;
