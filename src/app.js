@@ -55,7 +55,7 @@ function handleSubmit(event) {
 
 function convertToCelsius(event) {
     event.preventDefault();
-    let celsiusTemperature = fahrenheitTemperature - 32 * 9 / 5;
+    let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8; 
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
