@@ -33,7 +33,7 @@ function displayForecast() {
             <span class="forecast-day">
             ${day}
             </span>
-            <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" width="50px" />
+            <img src="https://openweathermap.org/img/wn/10n@2x.png" alt="" width="50px" />
             <span id="forecast-high">74˚</span><span id="forecast-low">45˚</span>
           </div>
         `;
