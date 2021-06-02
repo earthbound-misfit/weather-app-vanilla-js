@@ -18,6 +18,32 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector(".weather-forecast");
+
+    let days = ["Wed", "Thu", "Fri", "Sat"];
+
+    let forecastHTML = `<div class="row">`;
+    
+    days.forEach(function (day) {
+        forecastHTML = 
+          forecastHTML +
+          `
+          <div class="col-2">
+            <span class="forecast-day">
+            ${day}
+            </span>
+            <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" width="50px" />
+            <span id="forecast-high">74˚</span><span id="forecast-low">45˚</span>
+          </div>
+        `;
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastHTML.innerHTML = forecastHTML;
+  }
+
+
 function displayWeather(response) {
         let temperatureElement = document.querySelector("#temperature");
         let cityElement = document.querySelector("#city");
@@ -82,3 +108,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 search("Chicago");
+
+
