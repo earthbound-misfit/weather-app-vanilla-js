@@ -18,23 +18,30 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
-    let forecastElement = document.querySelector(".weather-forecast");
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-    let days = ["Wed", "Thu", "Fri", "Sat"];
+    return days[day];
+}
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
+    let forecastElement = document.querySelector(".weather-forecast");
 
     let forecastHTML = `<div class="row">`;
     
-    days.forEach(function (day) {
+    forecast.forEach(function (forecastDay) {
         forecastHTML = 
           forecastHTML +
           `
           <div class="col-2">
             <span class="forecast-day">
-            ${day}
+            ${formatDay(forecastDay.dt)}
             </span>
-            <img src="https://openweathermap.org/img/wn/10n@2x.png" alt="" width="50px" />
-            <span id="forecast-high">74˚</span><span id="forecast-low">45˚</span>
+            <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="50px" />
+            <span id="forecast-high">${forecastDay.temp.max}˚</span><span id="forecast-low">${forecastDay.temp.min}˚</span>
           </div>
         `;
     });
@@ -43,6 +50,12 @@ function displayForecast() {
     forecastElement.innerHTML = forecastHTML;
   }
 
+function getLatLong (coordinates) {
+    console.log(coordinates);
+    let apiKey = "dff2474c7e34531595f0b5e8d1de3e52";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayForecast);
+}
 
 function displayWeather(response) {
         let temperatureElement = document.querySelector("#temperature");
@@ -65,7 +78,9 @@ function displayWeather(response) {
         iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${icon}@2x.png`);
         iconElement.setAttribute("alt", response.data.weather[0].description);
 
-      }
+        getLatLong(response.data.coord);
+        
+}
 
 function search(city) {
     let apiKey = "dff2474c7e34531595f0b5e8d1de3e52";
@@ -108,6 +123,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 search("Chicago");
-displayForecast()
-
-

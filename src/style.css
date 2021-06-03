@@ -32,11 +32,11 @@ a {
 small {
   margin: 0 auto;
   display: block;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .weather-wrapper {
-  max-width: 600px;
+  max-width: 500px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #6e92ee;
@@ -99,7 +99,7 @@ small {
 .weather-forecast {
   margin-top: 10px;
   text-align: center;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .forecast-day {
