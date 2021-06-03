@@ -40,7 +40,7 @@ function displayForecast() {
     });
 
     forecastHTML = forecastHTML + `</div>`;
-    forecastHTML.innerHTML = forecastHTML;
+    forecastElement.innerHTML = forecastHTML;
   }
 
 
@@ -108,6 +108,6 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 search("Chicago");
-displayForecast();
+displayForecast()
 
 
