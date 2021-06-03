@@ -96,32 +96,7 @@ function handleSubmit(event) {
     search(cityInputElement.value);
 }
 
-function convertToCelsius(event) {
-    event.preventDefault();
-    let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8; 
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-    fahrenheitLink.classList.remove("active");
-    celsiusLink.classList.add("active");
-}
-
-function convertToFahrenheit(event) {
-    event.preventDefault();
-    temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-}
-
-let fahrenheitTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius)
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 search("Chicago");
