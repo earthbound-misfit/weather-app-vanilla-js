@@ -122,3 +122,7 @@ small {
 #signature {
   color: #f8208c;
 }
+
+#signature:hover {
+  color: #6e92ee;
+}
