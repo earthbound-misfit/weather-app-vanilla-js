@@ -41,7 +41,7 @@ function displayForecast(response) {
             <span class="forecast-day">
             ${formatDay(forecastDay.dt)}
             </span>
-            <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="50px" />
+            <img src="images/${forecastDay.weather[0].icon}.png" alt="" width="50px" />
             <span id="forecast-high">${Math.round(forecastDay.temp.max)}˚</span><span id="forecast-low">${Math.round(forecastDay.temp.min)}˚</span>
           </div>
         `;
@@ -76,7 +76,7 @@ function displayWeather(response) {
         humidityElement.innerHTML = response.data.main.humidity;
         windElement.innerHTML = response.data.wind.speed;
         dateElement.innerHTML = formatDate(response.data.dt * 1000);
-        iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${icon}@2x.png`);
+        iconElement.setAttribute("src",`images/${icon}.png`);
         iconElement.setAttribute("alt", response.data.weather[0].description);
 
         getLatLong(response.data.coord);
